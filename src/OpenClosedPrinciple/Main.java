@@ -14,7 +14,13 @@ public class Main {
             e.printStackTrace();
         }
 
+        DiscountTypeFactory discountFactory = new DiscountTypeFactory();
+        DiscountCalculator discountCalculator = new DiscountCalculator(discountFactory);
 
+        double studentDiscount = discountCalculator.calculateDiscount("STUDENT", 100);
+        System.out.printf("Student discount: %.2f%n", studentDiscount);
+        double seniorDiscount = discountCalculator.calculateDiscount("SENIOR", 100);
+        System.out.printf("Senior discount: %.2f%n", seniorDiscount);
 
 
     }
